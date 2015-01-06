@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="medidor-campanha:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <root id="archive" name="medidos-campanha-1.0.war">
+      <element id="artifact" artifact-name="medidor-campanha:war exploded" />
+    </root>
+  </artifact>
+</component>

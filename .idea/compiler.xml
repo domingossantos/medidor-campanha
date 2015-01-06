@@ -25,5 +25,8 @@
         <module name="medidor-campanha" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="medidor-campanha" target="1.6" />
+    </bytecodeTargetLevel>
   </component>
 </project>
