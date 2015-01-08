@@ -1,4 +1,4 @@
-package br.com.domsantos.model;
+package br.com.domsantos.medidor.model;
 
 import javax.persistence.*;
 import java.util.Calendar;

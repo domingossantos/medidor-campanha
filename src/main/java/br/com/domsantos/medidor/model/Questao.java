@@ -1,4 +1,4 @@
-package br.com.domsantos.model;
+package br.com.domsantos.medidor.model;
 
 import javax.persistence.*;
 
@@ -6,12 +6,13 @@ import javax.persistence.*;
  * Created by domingos on 07/01/15.
  */
 @Entity
-public class CanalCampanha {
+public class Questao {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @JoinColumn(name = "id_canal", referencedColumnName = "id")
-    private Canal canal;
+    private String enunciado;
+    @JoinColumn(name = "id_resposta", referencedColumnName = "id")
+    private Resposta resposta;
     @JoinColumn(name = "id_campanha", referencedColumnName = "id")
     private Campanha campanha;
 
@@ -23,12 +24,20 @@ public class CanalCampanha {
         this.id = id;
     }
 
-    public Canal getCanal() {
-        return canal;
+    public String getEnunciado() {
+        return enunciado;
     }
 
-    public void setCanal(Canal canal) {
-        this.canal = canal;
+    public void setEnunciado(String enunciado) {
+        this.enunciado = enunciado;
+    }
+
+    public Resposta getResposta() {
+        return resposta;
+    }
+
+    public void setResposta(Resposta resposta) {
+        this.resposta = resposta;
     }
 
     public Campanha getCampanha() {
