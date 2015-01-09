@@ -6,7 +6,7 @@ import java.util.Calendar;
 /**
  * Created by domingos on 07/01/15.
  */
-@Entity
+@Entity(name = "campanha")
 public class Campanha {
 
     @Id
@@ -84,5 +84,22 @@ public class Campanha {
 
     public void setCanal(Canal canal) {
         this.canal = canal;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Campanha)) return false;
+
+        Campanha campanha = (Campanha) o;
+
+        if (!id.equals(campanha.id)) return false;
+
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        return id.hashCode();
     }
 }

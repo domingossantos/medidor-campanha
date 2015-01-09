@@ -1,4 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <persistence xmlns="http://java.sun.com/xml/ns/persistence" version="2.0">
-
+    <persistence-unit name="medidorPU" transaction-type="JTA">
+        <provider>org.hibernate.ejb.HibernatePersistence</provider>
+            <jta-data-source>java:jboss/datasources/medidorDS</jta-data-source>
+        <class>br.com.domsantos.medidor.model.Resposta</class>
+        <class>br.com.domsantos.medidor.model.Questao</class>
+        <class>br.com.domsantos.medidor.model.Entrevistado</class>
+        <class>br.com.domsantos.medidor.model.Apuracao</class>
+        <class>br.com.domsantos.medidor.model.Campanha</class>
+        <class>br.com.domsantos.medidor.model.CanalCampanha</class>
+        <class>br.com.domsantos.medidor.model.Cliente</class>
+        <properties>
+            <property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect" />
+            <property name="hibernate.temp.use_jdbc_metadata_defaults" value="false"/>
+            <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver" />
+            <property name="hibernate.hbm2ddl.auto" value="create" />
+            <property name = "hibernate.show_sql" value = "true" />
+            <property name = "hibernate.format_sql" value = "true" />
+        </properties>
+    </persistence-unit>
 </persistence>

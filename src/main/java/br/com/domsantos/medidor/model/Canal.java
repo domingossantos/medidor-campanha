@@ -9,7 +9,7 @@ import javax.persistence.Id;
 /**
  * Created by domingos on 07/01/15.
  */
-@Entity
+@Entity(name = "canal")
 public class Canal {
 
     @Id
@@ -40,5 +40,22 @@ public class Canal {
 
     public void setDescricao(String descricao) {
         this.descricao = descricao;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Canal)) return false;
+
+        Canal canal = (Canal) o;
+
+        if (id != null ? !id.equals(canal.id) : canal.id != null) return false;
+
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        return id != null ? id.hashCode() : 0;
     }
 }

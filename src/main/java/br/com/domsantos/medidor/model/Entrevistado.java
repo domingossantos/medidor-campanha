@@ -6,25 +6,23 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 /**
- * Created by domingos on 07/01/15.
+ * Created by domingos on 08/01/15.
  */
 @Entity
-public class Cliente {
-
+public class Entrevistado {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private  Integer id;
     private String nome;
-    private String email;
     private String fone;
-    private String senha;
-    private char status;
+    private String email;
+    private Integer idade;
 
-    public Long getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -36,14 +34,6 @@ public class Cliente {
         this.nome = nome;
     }
 
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
     public String getFone() {
         return fone;
     }
@@ -52,30 +42,30 @@ public class Cliente {
         this.fone = fone;
     }
 
-    public String getSenha() {
-        return senha;
+    public String getEmail() {
+        return email;
     }
 
-    public void setSenha(String senha) {
-        this.senha = senha;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
-    public char getStatus() {
-        return status;
+    public Integer getIdade() {
+        return idade;
     }
 
-    public void setStatus(char status) {
-        this.status = status;
+    public void setIdade(Integer idade) {
+        this.idade = idade;
     }
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof Cliente)) return false;
+        if (!(o instanceof Entrevistado)) return false;
 
-        Cliente cliente = (Cliente) o;
+        Entrevistado that = (Entrevistado) o;
 
-        if (id != null ? !id.equals(cliente.id) : cliente.id != null) return false;
+        if (id != null ? !id.equals(that.id) : that.id != null) return false;
 
         return true;
     }

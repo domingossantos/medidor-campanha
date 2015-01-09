@@ -1,6 +1,6 @@
 <component name="ArtifactManager">
   <artifact type="exploded-war" name="medidor-campanha:war exploded">
-    <output-path>$PROJECT_DIR$/target/medidos-campanha-1.0</output-path>
+    <output-path>$PROJECT_DIR$/out/artifacts/medidor_campanha</output-path>
     <root id="root">
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">
@@ -49,9 +49,6 @@
           <element id="library" level="project" name="Maven: org.jfree:jfreechart:1.0.17" />
           <element id="library" level="project" name="Maven: org.jfree:jcommon:1.0.21" />
         </element>
-      </element>
-      <element id="directory" name="META-INF">
-        <element id="file-copy" path="$PROJECT_DIR$/target/MANIFEST.MF" />
       </element>
       <element id="javaee-facet-resources" facet="medidor-campanha/web/Web" />
     </root>

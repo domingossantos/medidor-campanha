@@ -11,8 +11,6 @@ public class Questao {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String enunciado;
-    @JoinColumn(name = "id_resposta", referencedColumnName = "id")
-    private Resposta resposta;
     @JoinColumn(name = "id_campanha", referencedColumnName = "id")
     private Campanha campanha;
 
@@ -32,19 +30,28 @@ public class Questao {
         this.enunciado = enunciado;
     }
 
-    public Resposta getResposta() {
-        return resposta;
-    }
-
-    public void setResposta(Resposta resposta) {
-        this.resposta = resposta;
-    }
-
     public Campanha getCampanha() {
         return campanha;
     }
 
     public void setCampanha(Campanha campanha) {
         this.campanha = campanha;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Questao)) return false;
+
+        Questao questao = (Questao) o;
+
+        if (id != null ? !id.equals(questao.id) : questao.id != null) return false;
+
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        return id != null ? id.hashCode() : 0;
     }
 }
